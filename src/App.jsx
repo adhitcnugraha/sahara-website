@@ -1,10 +1,10 @@
 import { useState } from "react";
-import LandingPage from "./components/LandingPage";
+import Hero from "./components/Hero";
 
 function App() {
   return (
     <div>
-      <LandingPage />
+      <Hero />
     </div>
   );
 }
