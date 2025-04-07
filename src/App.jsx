@@ -1,10 +1,11 @@
-import { useState } from "react";
 import Hero from "./components/Hero";
+import Pricelist from "./components/Pricelist";
 
 function App() {
   return (
     <div>
       <Hero />
+      <Pricelist />
     </div>
   );
 }
