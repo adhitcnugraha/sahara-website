@@ -1,11 +1,13 @@
+import Category from "./components/Category";
 import Hero from "./components/Hero";
-import Pricelist from "./components/Pricelist";
+import PricingPage from "./components/PricingPage";
 
 function App() {
   return (
     <div>
       <Hero />
-      <Pricelist />
+      <Category />
+      <PricingPage />
     </div>
   );
 }
