@@ -1,6 +1,6 @@
 import React from "react";
-import Landscape3 from "../assets/landscape/landscape3.png";
-import Card from "./Card";
+import Landscape3 from "../../assets/landscape/landscape3.png";
+import Card from "../Card";
 
 const plans = [
   {

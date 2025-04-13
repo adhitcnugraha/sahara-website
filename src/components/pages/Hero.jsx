@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 // import portrait image
-import Portrait from "../assets/portrait/portrait1.jpg";
-import Portrait2 from "../assets/portrait/portrait2.jpg";
-import Portrait3 from "../assets/portrait/portrait3.jpg";
-import Portrait4 from "../assets/portrait/portrait4.jpg";
+import Portrait from "../../assets/portrait/portrait1.jpg";
+import Portrait2 from "../../assets/portrait/portrait2.jpg";
+import Portrait3 from "../../assets/portrait/portrait3.jpg";
+import Portrait4 from "../../assets/portrait/portrait4.jpg";
 
 //import landscape image
-import Landscape from "../assets/landscape/landscape.jpg";
-import Landscape2 from "../assets/landscape/landscape2.jpg";
-import Landscape3 from "../assets/landscape/landscape3.png";
+import Landscape from "../../assets/landscape/landscape.jpg";
+import Landscape2 from "../../assets/landscape/landscape2.jpg";
+import Landscape3 from "../../assets/landscape/landscape3.png";
 
-import Logo from "../assets/logo.png";
+import Logo from "../../assets/logo.png";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -61,21 +61,21 @@ const Hero = () => {
         ))}
       </div>
       <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-        <img src={Logo} className="w-48 md:w-64 mb-4" alt="logo" />
-        <div className="flex gap-4">
+        <img src={Logo} className="w-36 md:w-52 mb-4" alt="logo" />
+        <div className="flex gap-6">
           <button
-            className="p-1.5 md:p-3 bg-white rounded-2xl hover:bg-gray-700"
+            className="p-1.5 md:p-3  hover:bg-gray-500"
             onClick={handlePrev}
             aria-label="Previous Image"
           >
-            <ChevronLeft color="#000000" className="w-6 h-6" />
+            <ChevronLeft color="#ffffff" className="w-6 h-6" />
           </button>
           <button
-            className="p-1.5 md:p-3 bg-white rounded-2xl hover:bg-gray-700"
+            className="p-1.5 md:p-3  hover:bg-gray-500"
             onClick={handleNext}
             aria-label="Next Image"
           >
-            <ChevronRight color="#000000" className="w-6 h-6 " />
+            <ChevronRight color="#ffffff" className="w-6 h-6 " />
           </button>
         </div>
       </div>
