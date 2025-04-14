@@ -1,5 +1,5 @@
 import React from "react";
-import Landscape3 from "../../assets/landscape/landscape3.png";
+import Landscape from "../../assets/landscape/landscape.png";
 import Card from "../Card";
 
 const plans = [
@@ -43,7 +43,7 @@ const plans = [
 const PricingPage = () => (
   <section
     className="relative min-h-screen p-10 text-white bg-cover bg-center bg-no-repeat"
-    style={{ backgroundImage: `url(${Landscape3})` }}
+    style={{ backgroundImage: `url(${Landscape})` }}
   >
     <div className="absolute inset-0 bg-black opacity-50 z-0" />
 

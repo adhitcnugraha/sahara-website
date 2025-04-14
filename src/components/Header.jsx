@@ -2,47 +2,69 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
 
-const Header = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  return (
-    <div className="absolute top-0 w-full bg-transparent text-white py-6 px-8 flex items-center justify-between z-20">
-      {/* Mobile: show menu toggle + icons */}
-      <div className="w-full flex justify-end md:hidden">
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          className="focus:outline-none"
-        >
-          {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
-      </div>
+const Header = ({ inline, vertical }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  if (!inline) {
+    return (
+      <>
+        {/* Mobile Menu Icon */}
+        <div className="absolute top-6 right-6 z-20">
+          {isOpen ? (
+            <X
+              className="w-6 h-6 cursor-pointer"
+              onClick={() => setIsOpen(false)}
+            />
+          ) : (
+            <Menu
+              className="w-6 h-6 cursor-pointer"
+              onClick={() => setIsOpen(true)}
+            />
+          )}
+        </div>
 
-      {/* Desktop nav */}
-      <nav
-        className={`${
-          menuOpen ? "block" : "hidden"
-        } absolute top-16 left-0 w-full md:static md:block md:w-auto md:top-auto md:right-auto md:ml-auto md:mr-8 bg-black bg-opacity-80 md:bg-transparent md:flex md:items-center md:space-x-4 z-30`}
-      >
-        <ul className="flex flex-col md:flex-row md:space-x-4 p-4 md:p-0">
-          <li>
-            <Link to="/category" className="block py-2 md:py-0 hover:underline">
-              Category
-              {/* Wedding, Prewed, Graduation, Daily, School */}
-            </Link>
-          </li>
-          <li>
-            <Link to="/price" className="block py-2 md:py-0 hover:underline">
-              Price
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="block py-2 md:py-0 hover:underline">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+        {/* Dropdown Menu */}
+        {isOpen && (
+          <div className="absolute top-16 right-6 bg-black text-white p-4 rounded-md shadow-md z-20">
+            <ul className="flex flex-col gap-4 text-base">
+              <li>
+                <Link to="/category" onClick={() => setIsOpen(false)}>
+                  Category
+                </Link>
+              </li>
+              <li>
+                <Link to="/price" onClick={() => setIsOpen(false)}>
+                  Price
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" onClick={() => setIsOpen(false)}>
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </>
+    );
+  }
+
+  // Desktop (inline = true)
+  return (
+    <ul
+      className={`text-white font-medium ${
+        vertical ? "flex flex-col gap-4" : "flex gap-8"
+      }`}
+    >
+      <li>
+        <Link to="/category">Category</Link>
+      </li>
+      <li>
+        <Link to="/price">Price</Link>
+      </li>
+      <li>
+        <Link to="/contact">Contact</Link>
+      </li>
+    </ul>
   );
 };
 

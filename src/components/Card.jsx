@@ -1,5 +1,5 @@
 import React from "react";
-import Landscape from "../assets/landscape/landscape.jpg";
+import Landscape2 from "../assets/landscape/landscape2.jpg";
 
 const Card = ({ title, price, features }) => {
   return (
@@ -7,7 +7,7 @@ const Card = ({ title, price, features }) => {
       <h5 className="mb-4 text-2xl font-medium text-gray-500 dark:text-gray-400 text-center">
         {title}
       </h5>
-      <img src={Landscape} className="mb-4" />
+      <img src={Landscape2} className="mb-4" />
       <div className="flex items-center text-gray-900 dark:text-white">
         <span className="text-3xl font-semibold mr-2">IDR</span>
         <span className="text-5xl font-extrabold tracking-tight">{price}</span>
